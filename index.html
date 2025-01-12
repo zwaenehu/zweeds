@@ -1,7 +1,15 @@
-fetch('https://fi.wiktionary.org/w/api.php?action=parse&page=koira&format=json&origin=*')
-  .then(response => response.json())
-  .then(data => {
-    const content = data.parse.text['*'];
-    document.getElementById('definition').innerHTML = content;
-  })
-  .catch(error => console.error('Error fetching data:', error));
+<body>
+  <!-- Your content -->
+  <div id="definition"></div>
+
+  <!-- JavaScript -->
+  <script>
+    fetch('https://fi.wiktionary.org/w/api.php?action=parse&page=koira&format=json&origin=*')
+      .then(response => response.json())
+      .then(data => {
+        const content = data.parse.text['*'];
+        document.getElementById('definition').innerHTML = content;
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
